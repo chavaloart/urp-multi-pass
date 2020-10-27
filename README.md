@@ -1,6 +1,6 @@
 # urp-multi-pass
 
-![](https://i.imgur.com/MwQtBBA.png)
+![](https://i.imgur.com/9RbAbT4.png)
 
 I made this shader in order to practice in the transition from SRP to URP.
 
