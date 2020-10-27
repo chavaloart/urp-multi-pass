@@ -4,7 +4,6 @@
 	{
 		_OutlineExtrusion("Outline Extrusion", float) = 0.05
 		_OutlineColor("Outline Color", Color) = (0, 0, 0, 1)
-		[HideInInspector]_Cull("__cull", Float) = 1.0
 	}
 		SubShader
 	{
@@ -15,17 +14,8 @@
 
 		Pass {
 
-			Cull[_Cull]
-
-			Stencil
-			{
-				Ref 4
-				Comp notequal
-				Fail keep
-				Pass replace
-			}
-
-
+			Cull Front
+			
 			CGPROGRAM
 
 			#pragma vertex vert

@@ -5,9 +5,6 @@
 		_Gloss("Gloss", Range(1, 300)) = 7
 		_SpecularOpacity("Specular Opacity", Range(0, 1)) = 1
 		_SpecularColor("Specular Color", Color) = (1,1,1,1)
-		[HideInInspector]_Cull("__cull", Float) = 2.0
-		_Blend1("__b1", Float) = 1.0
-		_Blend2("__b2", Float) = 6.0
 	}
 		SubShader
 		{
@@ -18,16 +15,8 @@
 			}
 			Pass
 			{
-				Cull[_Cull]
-				Blend[_Blend1][_Blend2]
-
-				Stencil
-				{
-					Ref 4
-					Comp always
-					Pass replace
-					ZFail keep
-				}
+				Cull Off
+				Blend One OneMinusSrcAlpha
 
 				CGPROGRAM
 				#pragma vertex vert

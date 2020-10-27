@@ -13,16 +13,6 @@
 			}
 			Pass
 			{
-
-
-				Stencil
-				{
-					Ref 4
-					Comp always
-					Pass replace
-					ZFail keep
-				}
-
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma fragment frag
