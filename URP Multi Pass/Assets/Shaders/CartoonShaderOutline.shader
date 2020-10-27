@@ -7,12 +7,13 @@
 	}
 		SubShader
 	{
-		Tags { 
+		Tags {
 			"RenderType" = "Opaque"
 			"RenderPipeline" = "UniversalPipeline"
 		}
 
 		Pass {
+			Name "Outline"
 
 			Cull Front
 			

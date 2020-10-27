@@ -17,8 +17,12 @@
 		{		
 			Pass
 			{
-				Tags { "RenderType" = "Opaque"
+
+				Name "Diffuse"
+				Tags {
+					"RenderType" = "Opaque"
 					"RenderPipeline" = "UniversalPipeline"
+					"LightMode" = "UniversalForward"
 				}
 
 				CGPROGRAM
@@ -82,9 +86,12 @@
 			}
 
 		Pass {
+
+			Name "Outline"
 			Tags {
 				"RenderType" = "Opaque"
 				"RenderPipeline" = "UniversalPipeline"
+				//Do not add "LightMode" here, this way you can have an extra pass.
 			}
 			Cull Front
 
@@ -138,13 +145,17 @@
 		}
 			Pass
 			{
+
+			Name "Specular"
 				Tags {
 					"RenderType" = "Transparent"
 					"Queue" = "Transparent"
 					"RenderPipeline" = "UniversalPipeline"
+					//This pass will NOT be rendered. Only the first pass with "LightMode" = "UniversalForward"
+					//and the first pass with no LightMode will run. In this case, the Diffuse and Outline
+					//pass will run.
 				}
 
-				Cull Off
 				Blend One OneMinusSrcAlpha
 
 				CGPROGRAM

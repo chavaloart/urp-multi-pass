@@ -12,10 +12,11 @@
 				"RenderType" = "Transparent"
 				"Queue" = "Transparent"
 				"RenderPipeline" = "UniversalPipeline"
+				"LightMode" = "UniversalForward"
 			}
 			Pass
 			{
-				Cull Off
+				Name "Specular"
 				Blend One OneMinusSrcAlpha
 
 				CGPROGRAM

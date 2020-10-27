@@ -10,9 +10,11 @@
 		{
 			Tags { "RenderType" = "Opaque"
 				"RenderPipeline" = "UniversalPipeline"
+				"LightMode" = "UniversalForward"
 			}
 			Pass
 			{
+				Name "Diffuse"
 				CGPROGRAM
 				#pragma vertex vert
 				#pragma fragment frag
